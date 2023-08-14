@@ -54,20 +54,20 @@ export default function Home() {
 </div>
 
       <div className="flex flex-wrap items-center justify-around max-w-4xl mt-6 sm:w-full ">
-      {backEnds.map((cardInfo: any) => (
+      {backEnds.map((cardInfo: any, index:number) => (
         <Card icon= {cardInfo.icon}     
         cardName={cardInfo.cardName} description={cardInfo.description}
         tags = {cardInfo.tags}
         iconColor={cardInfo.iconColor}
-         key={cardInfo.id} /> 
+         key={index} /> 
       ))}
        <hr></hr>
-{FrontEnds.map((cardInfo: any) => (
+{FrontEnds.map((cardInfo: any, index:number) => (
         <Card icon= {cardInfo.icon}     
         cardName={cardInfo.cardName} description={cardInfo.description}
         tags = {cardInfo.tags}
         iconColor={cardInfo.iconColor}
-         key={cardInfo.id} /> 
+         key={index} /> 
       ))}
       </div>
 
