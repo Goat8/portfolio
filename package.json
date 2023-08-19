@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "format": "prettier --write ."
+    "format": "prettier --write \"**/*.{ts, tsx,json,md}\"",
+    "format:check": "prettier --check \"**/*.{ts,tsx,json,md}\""
   },
   "dependencies": {
     "@types/node": "20.4.10",
@@ -26,6 +27,6 @@
     "typescript": "5.1.6"
   },
   "devDependencies": {
-    "prettier": "^3.0.1"
+    "prettier": "^3.0.2"
   }
 }
