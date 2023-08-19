@@ -1,8 +1,8 @@
 import DashboardLayout from "./components/layout";
 import React, { useState } from "react";
-import Card from "@/components/cards/card";
-import { BiLogoAngular, BiLogoNodejs } from "react-icons/bi";
-import { SiNestjs } from "react-icons/si";
+import Card from "./components/cards/card";
+import { BiLogoAngular, BiLogoNodejs,BiLogoPostgresql,BiLogoMongodb } from "react-icons/bi";
+import { SiNestjs,SiMysql} from "react-icons/si";
 import { TbBrandNextjs } from "react-icons/tb";
 const backEnds = [
   {
@@ -48,6 +48,38 @@ const FrontEnds = [
     iconColor: "#303030",
   },
 ];
+
+const databases = [
+  {
+    cardName: "MySQL",
+    description:
+      "Proficient in MySQL database design, development. I have strong understanding of relational database concepts and normalization techniques.Experience working with an ORM framework, such as Sequelize or TypeORM, to abstract database operations. Experience in designing logical and physical data models using tools like MySQL Workbench.",
+    tags: ["#workbench", "#bekeeper"],
+    icon: <SiMysql size={30}/>,
+    iconColor: "#00758f",
+  },
+  {
+    cardName: "PostgreSQL",
+    description:
+      "Strong understanding of relational database concepts and normalization techniques.Proficient in using PostgreSQL command-line interface, pgAdmin. Proficient in defining models, relationships, and performing CRUD operations using the Prisma ORM.",
+    tags: [
+      "#pgAdmin",
+    ],
+    icon: <BiLogoPostgresql />,
+    iconColor: "#336791"
+  },
+  {
+    cardName: "MongoDB",
+    description:
+      "Strong understanding of NoSQL database concepts and document-based data models. Expertise in writing MongoDB queries and aggregations for data retrieval and manipulation. Experience in using stages, pipelines, and operators to perform advanced aggregations.",
+    tags: [
+      "#mongodbCompass",
+      "#mongoose",
+    ],
+    icon: <BiLogoMongodb />,
+    iconColor: "#3FA037",
+  },
+];
 export default function Home() {
   return (
     <DashboardLayout>
@@ -66,7 +98,10 @@ export default function Home() {
           </div>
         </div>
 
+        <h1 className="text-base font-bold mb-8">Backend technologies </h1>
+
         <div className="grid md:grid-cols-2 gap-4 sm:grid-cols-1 rounded-lg border-gray-300 border-4">
+
           {backEnds.map((cardInfo: any, index: number) => (
             <Card
               icon={cardInfo.icon}
@@ -78,10 +113,27 @@ export default function Home() {
             />
           ))}
         </div>
+          
+        <h1 className="text-base font-bold mt-16">Frontend technologies </h1>
+        <div className="mt-8" >
+          <div className="grid md:grid-cols-2 gap-4 sm:grid-cols-1 rounded-lg border-gray-300 border-4">
+            {FrontEnds.map((cardInfo: any, index: number) => (
+              <Card
+                icon={cardInfo.icon}
+                cardName={cardInfo.cardName}
+                description={cardInfo.description}
+                tags={cardInfo.tags}
+                iconColor={cardInfo.iconColor}
+                key={index}
+              />
+            ))}
+          </div>
+        </div>
+        <h1 className="text-base font-bold mt-16">Databases </h1>
 
         <div className="mt-8">
           <div className="grid md:grid-cols-2 gap-4 sm:grid-cols-1 rounded-lg border-gray-300 border-4">
-            {FrontEnds.map((cardInfo: any, index: number) => (
+            {databases.map((cardInfo: any, index: number) => (
               <Card
                 icon={cardInfo.icon}
                 cardName={cardInfo.cardName}

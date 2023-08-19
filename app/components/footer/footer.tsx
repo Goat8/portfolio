@@ -40,7 +40,7 @@ export default function Footer() {
       </a>
     </div>
     <div className="text-center py-1">
-    &copy; {new Date().getFullYear()}
+    &copy; {new Date().getFullYear()} created using next.js
   </div>
   </>
   );
